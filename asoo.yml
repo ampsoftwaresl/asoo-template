@@ -1,7 +1,7 @@
 deploy_info:
   private_submodules:
     - git@github.com:ampsoftwaresl/enterprise.git
-    - git@github.com:ampsoftwaresl/asoo-tools.git
+    # - git@github.com:ampsoftwaresl/asoo-tools.git
 
 server_setup:
   update:
