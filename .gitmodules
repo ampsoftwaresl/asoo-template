@@ -162,3 +162,7 @@
 	path = addons/OCA/server-ux
 	url = https://github.com/OCA/server-ux.git
 	branch = 15.0
+[submodule "addons/extra-addons/asoo-tools"]
+	path = addons/extra-addons/asoo-tools
+	url = git@github.com:ampsoftwaresl/asoo-tools.git
+	branch = 15.0
