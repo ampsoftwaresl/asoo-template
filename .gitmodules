@@ -2,10 +2,6 @@
 	path = addons/extra-addons/asoo-tools
 	url = git@github.com:ampsoftwaresl/asoo-tools.git
 	branch = 16.0
-[submodule "addons/enterprise"]
-	path = addons/enterprise
-	url = git@github.com:ampsoftwaresl/enterprise.git
-	branch = 16.0
 [submodule "addons/OCA/account-analytic"]
 	path = addons/OCA/account-analytic
 	url = https://github.com/OCA/account-analytic.git
