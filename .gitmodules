@@ -166,3 +166,15 @@
 	path = addons/extra-addons/asoo-tools
 	url = git@github.com:ampsoftwaresl/asoo-tools.git
 	branch = 15.0
+[submodule "addons/OCA/agreement"]
+	path = addons/OCA/agreement
+	url = https://github.com/OCA/agreement.git
+	branch = 15.0
+[submodule "addons/OCA/helpdesk"]
+	path = addons/OCA/helpdesk
+	url = https://github.com/OCA/helpdesk.git
+	branch = 15.0
+[submodule "addons/OCA/repair"]
+	path = addons/OCA/repair
+	url = https://github.com/OCA/repair.git
+	branch = 15.0
