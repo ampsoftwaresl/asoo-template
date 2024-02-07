@@ -65,7 +65,6 @@ RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/od
 
 # Install python requirements.txt
 RUN pip3 install --upgrade pip
-RUN pip3 install pyopenssl --upgrade
 ADD ./requirements.txt /requirements.txt
 RUN pip3 install -r /requirements.txt 
 
