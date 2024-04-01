@@ -170,3 +170,7 @@
 	path = addons/OCA/server-ux
 	url = https://github.com/OCA/server-ux.git
 	branch = 16.0
+[submodule "addons/extra-addons/server-tools"]
+	path = addons/extra-addons/server-tools
+	url = git@github.com:ampsoftwaresl/server-tools.git
+	branch = 16.0
