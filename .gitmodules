@@ -170,3 +170,7 @@
 	path = addons/extra-addons/server-tools
 	url = git@github.com:ampsoftwaresl/server-tools.git
 	branch = 17.0
+[submodule "addons/extra-addons/web"]
+	path = addons/extra-addons/web
+	url = git@github.com:ampsoftwaresl/web.git
+	branch = 17.0
