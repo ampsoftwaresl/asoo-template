@@ -174,3 +174,7 @@
 	path = addons/extra-addons/design-themes
 	url = https://github.com/odoo/design-themes.git
 	branch = 18.0
+[submodule "addons/asoo-tools"]
+	path = addons/asoo-tools
+	url = git@github.com:ampsoftwaresl/asoo-tools.git
+	branch = 18.0
