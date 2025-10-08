@@ -65,15 +65,26 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ jammy-pgdg main' > /etc/a
 # Install rtlcss (on Debian buster)
 RUN npm install -g rtlcss
 
-# Install Odoo
-ENV ODOO_VERSION 18.0
-ARG ODOO_RELEASE=20250603
-ARG ODOO_SHA=cb9817c6644b9438df3b28747bbbcacd7f3559ef
+# Install lxml-html-clean via pip instead of apt
+RUN pip3 install lxml-html-clean
+
+RUN apt-get update && apt-get install -y --no-install-recommends equivs \
+    && cd /tmp \
+    && printf "Package: python3-lxml-html-clean\nVersion: 0.4.3\nArchitecture: all\nMaintainer: Dummy\nDescription: Dummy package to satisfy Odoo\n" > control \
+    && equivs-build control \
+    && dpkg -i python3-lxml-html-clean_0.4.3_all.deb \
+    && rm -f control python3-lxml-html-clean_0.4.3_all.deb
+
+# Instala Odoo desde .deb oficial
+ENV ODOO_VERSION 19.0
+ARG ODOO_RELEASE=20251003
+ARG ODOO_SHA=ec3b491d655c22a8b493b83e297a9a6bd91ff86c
 RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb \
     && echo "${ODOO_SHA} odoo.deb" | sha1sum -c - \
     && apt-get update \
-    && apt-get -y install --no-install-recommends ./odoo.deb \
+    && apt-get install -y --no-install-recommends ./odoo.deb \
     && rm -rf /var/lib/apt/lists/* odoo.deb
+
 
 # Install python requirements.txt
 RUN pip3 install --upgrade pip
