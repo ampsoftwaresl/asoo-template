@@ -166,3 +166,15 @@
 	path = addons/OCA/management-system
 	url = https://github.com/OCA/management-system.git
 	branch = 19.0
+[submodule "addons/extra-addons/asoo-tools"]
+	path = addons/extra-addons/asoo-tools
+	url = git@github.com:ampsoftwaresl/asoo-tools.git
+	branch = 19.0
+[submodule "addons/extra-addons/design-themes"]
+	path = addons/extra-addons/design-themes
+	url = https://github.com/odoo/design-themes.git
+	branch = 19.0
+[submodule "addons/extra-addons/server-tools"]
+	path = addons/extra-addons/server-tools
+	url = git@github.com:ampsoftwaresl/server-tools.git
+	branch = 19.0
