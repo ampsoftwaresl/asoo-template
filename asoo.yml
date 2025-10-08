@@ -29,8 +29,8 @@ server_setup:
   docker-compose:
     sudo: true
     commands:
-      - 'curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose'
-      - 'chmod +x /usr/local/bin/docker-compose'
+      - 'apt-get update'
+      - 'apt-get install -y docker-compose-plugin'
   workspace-chmod:
     sudo: true
     commands:
@@ -38,7 +38,7 @@ server_setup:
 
 environment_info:
   application: 'odoo'
-  application_version: '18.0'
+  application_version: '19.0'
   application_service: 'web'
   application_container_user: '0'
   git_submodule_path: 'addons'
@@ -72,6 +72,6 @@ environment_test_info:
   script_after:
     sudo: true
     commands:
-      - 'docker-compose stop web'
-      - 'docker-compose exec -T db dropdb -U odoo odoo-test'
-      - 'docker-compose start web'
+      - 'docker compose stop web'
+      - 'docker compose exec -T db dropdb -U odoo odoo-test'
+      - 'docker compose start web'
