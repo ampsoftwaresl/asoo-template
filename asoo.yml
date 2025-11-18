@@ -77,6 +77,6 @@ environment_test_info:
   script_after:
     sudo: true
     commands:
-      - 'docker compose stop web'
-      - 'docker compose exec -T db dropdb -U odoo odoo-test'
-      - 'docker compose start web'
+      - 'docker-compose stop web'
+      - 'docker-compose exec -T db dropdb -U odoo odoo-test'
+      - 'docker-compose start web'
