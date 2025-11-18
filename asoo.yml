@@ -23,14 +23,9 @@ server_setup:
   docker:
     sudo: true
     commands:
-      - 'cd /tmp'
-      - 'curl -LO https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/containerd.io_1.7.28-2~ubuntu.24.04~noble_amd64.deb'
-      - 'curl -LO https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-ce-cli_28.2.2-1~ubuntu.24.04~noble_amd64.deb'
-      - 'curl -LO https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-ce_28.2.2-1~ubuntu.24.04~noble_amd64.deb'
-      - 'dpkg -i containerd.io_1.7.28-2~ubuntu.24.04~noble_amd64.deb'
-      - 'dpkg -i docker-ce-cli_28.2.2-1~ubuntu.24.04~noble_amd64.deb'
-      - 'dpkg -i docker-ce_28.2.2-1~ubuntu.24.04~noble_amd64.deb'
-      - 'rm -f *.deb'  
+      - 'apt update'
+      - 'apt install -y docker.io'
+      - 'systemctl enable --now docker'
   docker-compose:
     sudo: true
     commands:
