@@ -23,9 +23,9 @@ server_setup:
   docker:
     sudo: true
     commands:
-      - 'curl -fsSL get.docker.com -o get-docker.sh'
-      - 'sh get-docker.sh'
-      - 'rm get-docker.sh'
+      - 'apt update'
+      - 'apt install -y docker.io'
+      - 'systemctl enable --now docker'
   docker-compose:
     sudo: true
     commands:
